@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
@@ -27,8 +26,11 @@
 <div id="discipline-creating" class="display-flex start">
     <div class="column-20"></div>
     <div CLASS="div-for-student-modifing">
-        <div class="display-flex"><label>Название</label><input type="text" value="${dis.disciplina}"></div>
-        <div class="display-flex"><input type="submit" value="Применить"></div>
+        <form action="/disciplina-modifying" method="post">
+            <input type="hidden" name="idDisModHidden" value="${dis.id}">
+            <div class="display-flex"><label>Название</label><input name="newDisciplinaName" type="text" value="${dis.disciplina}"></div>
+            <div class="display-flex"><input type="submit" value="Применить"></div>
+        </form>
     </div>
 </div>
 </body>

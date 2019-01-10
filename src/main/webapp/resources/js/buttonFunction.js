@@ -12,10 +12,6 @@ function modifiDisciplines() {
     }
 
     var id = $(items).attr("id");
-    $('#isDeleteDis').val(id);
+    $('#idModifyingDisciplineHidden').val(id);
     $('#disciplina-modyfying-form').submit();
-
-
-
-
 }

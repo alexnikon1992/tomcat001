@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <title>Список всех студентов</title>
     <link rel="stylesheet" href="../resources/css/style.css">
-    <script src="../../../resources/js/buttonFunction.js" ></script>
-    <script src = "../../../resources/js/jquery.min.js"></script>
+    <script src="../resources/js/buttonFunction.js"></script>
+    <script src="../resources/js/jquery.min.js"></script>
 </head>
 <body>
 <div class="display-flex centre">
@@ -33,12 +33,12 @@
                 <th></th>
                 <th>Наименование дисциплины</th>
             </tr>
-            <c:forEach items="${disciplinalist}" var = "currentDist">
-            <tr>
-                <td><input type="checkbox" id="${currentDist.id}"></td>
-                <td>${currentDist.disciplina}</td>
+            <c:forEach items="${disciplinalist}" var="currentDist">
+                <tr>
+                    <td><input type="checkbox" id="${currentDist.id}"></td>
+                    <td>${currentDist.disciplina}</td>
 
-            </tr>
+                </tr>
             </c:forEach>
         </table>
     </div>
@@ -46,15 +46,22 @@
         <div class=" mobile-div">
             <div>
                 <form action="/disciplina-creating" method="get">
-                <input class="big-big-button"  type="submit" value="Создать дисциплину..."></div>
-            </form>
-            <div><input onclick="modifiDisciplines()" type="submit" class="big-big-button" value="Модифицировать выбранную дисциплину..."></div>
-            <form action="/disciplina-modifying" method="get" id="disciplina-modyfying-form">
+                    <input class="big-big-button" type="submit" value="Создать дисциплину...">
+                </form>
+            </div>
+            <div>
+                <input onclick="modifiDisciplines()" type="submit" class="big-big-button"
+                        value="Модифицировать выбранную дисциплину..."></div>
+
                 <input type="hidden" name="isDeleteDis" id="isDeleteDis">
-            </form>
+
             <div><input class="big-big-button" type="submit" value="Удалить выбранную дисциплину..."></div>
         </div>
     </div>
 </div>
+
+<form id="disciplina-modyfying-form" method="get" action="/disciplina-modifying">
+    <input type="hidden" id="idModifyingDisciplineHidden" name="idModifyingDisciplineHidden">
+</form>
 </body>
 </html>

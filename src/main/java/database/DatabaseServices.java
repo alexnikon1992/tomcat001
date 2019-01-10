@@ -85,12 +85,12 @@ public class DatabaseServices {
         }
     }
 
-    public static void disciplineModifying(String disciplina) {
+    public static void disciplineModifying(String disciplina, String id) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
             Statement statement = conn.createStatement();
-            statement.execute("UPDATE `disciplina` SET `disciplina` = '" + disciplina + "' WHERE (`id` = '1')");
+            statement.execute("UPDATE `disciplina` SET `disciplina` = '" + disciplina + "' WHERE (`id` = '"+id+"')");
         } catch (Exception e) {
             e.printStackTrace();
         }
