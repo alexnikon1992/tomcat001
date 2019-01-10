@@ -55,13 +55,17 @@
 
                 <input type="hidden" name="isDeleteDis" id="isDeleteDis">
 
-            <div><input class="big-big-button" type="submit" value="Удалить выбранную дисциплину..."></div>
+            <div><input class="big-big-button" type="submit" value="Удалить выбранную дисциплину..." onclick="deleteDisciplines()"></div>
         </div>
     </div>
 </div>
 
 <form id="disciplina-modyfying-form" method="get" action="/disciplina-modifying">
     <input type="hidden" id="idModifyingDisciplineHidden" name="idModifyingDisciplineHidden">
+</form>
+
+<form id="disciplina-remove-form" method="post" action="/disciplina-list-cont">
+    <input type="hidden" id="idRemoveDisciplineHidden" name="idRemoveDisciplineHidden">
 </form>
 </body>
 </html>

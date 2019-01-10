@@ -43,6 +43,18 @@ public class DatabaseServices {
         }
     }
 
+    public static void deleteDiscipline(String[]idsDelete) {
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Statement statement = conn.createStatement();
+            for(int i=0; i<idsDelete.length; i++ ){
+                statement.execute("UPDATE `disciplina` SET `status` = '0' WHERE (`id` = '"+idsDelete[i]+"');");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void studentCreating(String surname, String name, String group, String date) {
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");

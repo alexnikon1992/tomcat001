@@ -22,4 +22,12 @@ public class DisciplinaListController extends HttpServlet {
         req.setAttribute("disciplinalist", disciplinas);
         req.getRequestDispatcher("/WEB-INF/jsp/newJsp/disciplina-list.jsp").forward(req,resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idsDeleteDosciplines = req.getParameter("idRemoveDisciplineHidden");
+       String [] deleteDis = idsDeleteDosciplines.split(",");
+       DatabaseServices.deleteDiscipline(deleteDis);
+       resp.sendRedirect("/disciplina-list-cont");
+    }
 }
