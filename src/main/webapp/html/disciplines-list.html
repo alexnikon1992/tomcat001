@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех студентов</title>
+    <link rel="stylesheet" href="../resources/css/style.css">
+</head>
+<body>
+<div class="display-flex centre">
+    <div></div>
+    <div><h1>Система управления студентами и их успеваемостью</h1></div>
+    <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+</div>
+<div class="display-flex start padding-top-10">
+    <div class="column-20">
+        <a class="a-na-glavnuu" href="/">На главную</a>
+    </div>
+    <div class="main-title-page">
+        Список дисциплин
+    </div>
+</div>
+
+<div id="disciplina-list" class="display-flex start for-mobile-display-block">
+    <div class="column-20"></div>
+    <div>
+        <table class="table-main-info table-student-progress">
+            <tr>
+                <th></th>
+                <th>Наименование дисциплины</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked></td>
+                <td>Высшая математика</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>История Науки и Техники</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Информатика</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Политологи</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Теория Алгоритмизации</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="div-student-progress-select-semestr">
+        <div class=" mobile-div">
+            <div><input class="big-big-button" type="submit" value="Создать дисциплину..."></div>
+            <div><input type="submit" class="big-big-button" value="Модифицировать выбранную дисциплину..."></div>
+            <div><input class="big-big-button" type="submit" value="Удалить выбранную дисциплину..."></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

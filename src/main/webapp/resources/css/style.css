@@ -1,0 +1,452 @@
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('../font/Roboto-Regular.ttf');
+    src: url('../font/Roboto-Regular.ttf?#iefix') format('embedded-opentype'),
+    url('../font/Robotolight.woff') format('woff'),
+    url('../font/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #eeeeee;
+    font-family: RobotoRegular;
+    font-family: cursive;
+}
+
+#div-for-main-title {
+    width: 50%;
+    min-width: 500px;
+    margin: auto;
+    background-color: #ffffff;
+    border: 1px #212121 solid;
+}
+
+#div-for-main-title h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 23px;
+    text-align: center;
+}
+
+#div-for-header {
+    display: flex;
+}
+
+#div-for-centre {
+    margin: auto;
+    width: 50%;
+    min-width: 500px;
+    padding-top: 50px;
+}
+
+#div-for-centre a {
+    padding-right: 25%;
+}
+
+.div-main-info {
+    padding-left: 10px;
+    margin-top: 40px;
+    display: flex;
+
+}
+
+.div-main-info .div-for-naglavnuu {
+    padding-right: 17%;
+    font-size: 12px;
+}
+
+.div-main-info .div-for-naglavnuu a {
+    width: 70px;
+}
+
+.div-main-info h3 {
+    font-size: 18px;
+    margin: 0 0 25px 0;
+}
+
+.table-main-info {
+    margin-left: 0px;
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 880px;
+}
+
+
+
+.table-main-info th {
+    border: 1px solid #2C5E80;
+    padding: 30px 3px;
+    text-align: left;
+    font-size: 14px;
+    background-color: #c5c5cb;
+}
+
+.table-main-info td {
+    border: 1px solid #2C5E80;
+    padding: 30px 3px;
+    font-size: 12px;
+}
+
+.table-one-student {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.table-student-progress {
+    width: 322px;
+    margin-top: 20px;
+}
+
+.table-one-student th, .table-one-student td {
+    padding: 5px;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.div-for-student-modifing {
+    width: 350px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.div-for-student-modifing div {
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.div-for-student-modifing label {
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+.div-for-student-modifing input[type="text"] {
+    padding: 4px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.div-for-student-modifing input[type="submit"] {
+    padding: 4px 30px;
+    font-size: 15px;
+    background-color: #c5c5cb;
+    font-family: cursive;
+    margin-right: 65px;
+    min-width: 148px;
+}
+
+.student-list-div {
+    padding-left: 48px;
+}
+
+.centre {
+    justify-content: center;
+}
+
+.start {
+    justify-content: start;
+}
+
+.display-grid {
+    display: grid;
+    height: 120px;
+}
+
+.black-button {
+    margin: 0 25px 20px 0px;
+    height: 25px;
+    font-size: 16px;
+    min-height: 40px;
+    background-color: #c5c5cb;
+    font-family: cursive;
+}
+
+.a-na-glavnuu {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.big-button {
+    min-width: 400px;
+}
+
+.small-button {
+    min-width: 280px;
+}
+#disciplina-list .big-big-button{
+    margin-bottom: 20px;
+    min-width: 400px;
+}
+
+#disciplina-list .table-main-info{
+    margin-left: 0px;
+}
+.all-width-template {
+    width: 100%;
+}
+
+#discipline-creating input[type="submit"]{
+    margin-left: 71px;
+}
+#button-create-term input[type="submit"]{
+    margin-left: 186px;
+}
+#discipline-creating .div-for-student-modifing div {
+    justify-content: start;
+}
+#discipline-creating .div-for-student-modifing div{
+    padding-left: 5px;
+}
+
+div.display-flex.start.padding-top-10{
+    padding-right: 256px;
+}
+
+#div-title-page .main-title-page{
+    padding-left: 0px;
+    font-size: 17px;
+    padding-top: 10px;
+    font-weight: 600;
+    padding-top: 30px;
+}
+
+
+.column-20 {
+    width: 20%;
+}
+
+.column-60 {
+    width: 60%;
+}
+
+.column-7 {
+    width: 7%;
+}
+
+.column-13 {
+    width: 13%;
+}
+
+.column-15 {
+    width: 15%;
+}
+
+.column-45 {
+    width: 45%;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 26px;
+    font-weight: 500;
+    background-color: white;
+    text-align: center;
+    border: 1px solid;
+    line-height: 51px;
+    padding: 0 100px 0 100px;
+}
+
+.logout-link {
+    vertical-align: bottom;
+    padding-bottom: 17px;
+    padding-left: 10px;
+}
+
+.logout-div {
+    padding-top: 50px;
+}
+
+.main-title-page {
+    padding-left: 48px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.student-list-page{
+    font-weight: 600;
+    font-size: 19px;
+    padding-left: 0px;
+
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.line-heigth-50 {
+    line-height: 50px;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+.color-red {
+    color: red;
+    font-style: italic;
+}
+
+.div-student-progress-select-semestr {
+    margin: 20px 0 0 50px;
+}
+
+.div-student-progress-select-semestr .start {
+    margin-bottom: 25px;
+}
+
+.div-student-progress-select-semestr label {
+    padding-right: 12px;
+    font-weight: 600;
+}
+
+.div-student-progress-select-semestr select {
+    padding: 4px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.select:after {
+    content: "▼";
+    padding: 0px 0px;
+    font-size: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    z-index: 0;
+    text-align: center;
+    width: 15%;
+    height: 88%;
+    pointer-events: none;
+    box-sizing: border-box;
+    background-color: #c5c5cb;
+    border: 1px solid #2C5E80;
+}
+
+select {
+    padding-right: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.div-student-progress-select-semestr input {
+    padding: 4px 30px;
+    font-size: 15px;
+    background-color: #c5c5cb;
+    font-family: cursive;
+    margin-right: 65px;
+    min-width: 148px;
+}
+
+#div-title-link {
+    width: 100%;
+    text-align: -webkit-center;
+}
+
+#div-title-link .title-page {
+    justify-content: space-around;
+    display: flex;
+    width: 74%;
+    margin-left: -67px;
+    margin-top: 60px;)
+}
+
+.div-for-student-page-new{
+    width: 518px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.error-lable{
+    color: red;
+    padding-left: 52px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.div-class-for-button-error{
+    padding-bottom: 5px;
+}
+.login .div-student-progress-select-semestr{
+    margin: 20px 0 0 20px;
+}
+#select-rol{
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .column-20 {
+        width: 15%;
+    }
+
+    .column-100 {
+        width: 85%;
+    }
+
+    .table-main-info {
+        width: 100%;
+    }
+
+    .mobile-div {
+        display: block;
+    }
+
+    .small-button {
+        min-width: 400px;
+    }
+    h1{
+        padding: 0 30px 0 30px;
+        line-height: 33px;
+    }
+    div.display-flex.start.padding-top-10 {
+        padding-right: 10%;
+    }
+
+    div.display-flex.start.padding-top-10 {
+        padding-right: 10%;
+    }
+    #div-title-link .title-page{
+        width: 97%;
+    }
+    .for-mobile-display-block{
+        display: block;
+    }
+
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .mobile-div {
+        display: block;
+    }
+
+    .small-button {
+        min-width: 400px;
+    }
+
+    h1{
+        padding: 0 20px 0 20px;
+        line-height: 33px;
+
+    }
+
+}
+

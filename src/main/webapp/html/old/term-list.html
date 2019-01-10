@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Система управления студентами и их успеваемостью</title>
+    <meta name="descripcion" content="Эта система поможет вам управлять онлайн университетом">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+</head>
+<body>
+<div id="div-for-header">
+    <div class="div-for-main-title">
+        <h1>
+            Система управления студентами и их успеваемостью
+        </h1>
+
+    </div>
+    <a href="/logout">
+        logout
+    </a>
+</div>
+<div id="div-main-info">
+    <div id="div-for-naglavnuu">
+        <a href="/">
+            На главную
+        </a>
+    </div>
+
+    <div>
+        <h3>
+            Выбрать семестр
+        </h3>
+        <div id=1>
+            <div id=2></div>
+        </div>
+        <select>
+            <option>семестр 1</option>
+            <option>семестр 2</option>
+            <option>семестр 3</option>
+        </select>
+
+    </div>
+        <input class="black-button" type="submit" value="Выбрать"></div>
+
+
+    <h3>
+        Длительность семестра: 24 недели
+    </h3>
+    <h3>
+        Список дисциплин семестра
+    </h3>
+    <div class="display-flex">
+        <div>
+            <table class="table-main-info">
+                <tr>
+
+                    <th>
+                        Название дисциплины
+                    </th>
+                </tr>
+                <tr>
+
+                    <td>
+                        Высшая математика
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        История Науки и Техники
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        Политология
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        Информатика
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        Теория Алгоритимизации
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="display-grid">
+            <form action="/disciplina-create" method="get">
+                <input class="black-button" type="submit" value="Создать дисциплину...">
+            </form>
+
+            <input class="black-button" type="submit" value="Модифицировать выбранную дисциплину...">
+            <input class="black-button" type="submit" value="Удалить выбранную дисциплину...">
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+</body>
+</html>

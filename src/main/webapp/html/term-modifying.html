@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех студентов</title>
+    <link rel="stylesheet" href="../resources/css/style.css">
+</head>
+<body>
+<div class="display-flex centre">
+    <div></div>
+    <div><h1>Система управления студентами и их успеваемостью</h1></div>
+    <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+</div>
+<div class="display-flex start padding-top-10">
+    <div class="column-20">
+        <a class="a-na-glavnuu" href="/">На главную</a>
+        <a class="a-na-glavnuu" href="/">Назад</a>
+    </div>
+    <div class="main-title-page">
+        Для модификации семестра отредактируйте данные и нажмите кнопку "Применить".
+    </div>
+</div>
+<div id="discipline-creating" class="display-flex start">
+    <div class="column-20"></div>
+    <div CLASS="div-for-student-modifing div-for-student-page-new">
+        <div class="display-flex"><label>Длительность (в неделях)</label><input type="text" value="18"></div>
+        <div class="display-flex"><label>Длительность (в неделях)</label><select multiple size="8">
+            <option>Информатика</option>
+            <option>Политология</option>
+            <option>Социология</option>
+            <option>Высшая Математика</option>
+            <option>Теория Алгоритмизации</option>
+            <option>Теория игр</option>
+            <option>Булева Алгебра</option>
+            <option>Системный анализ</option>
+            <option>Тригонометрия</option>
+            <option>Обществознание</option>
+        </select>
+        </div>
+
+        <div class="display-flex" id="button-create-term">
+            <input type="submit" value="Применить">
+        </div>
+    </div>
+</div>
+</body>
+</html>
