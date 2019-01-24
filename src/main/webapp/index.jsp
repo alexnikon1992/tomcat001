@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Список всех студентов</title>
-    <link rel="stylesheet" href="../../resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
 <div class="display-flex centre">

@@ -1,4 +1,5 @@
 package database;
+import constants.Constant;
 import entity.*;
 
 import java.sql.*;
@@ -15,8 +16,7 @@ public class DatabaseServices {
         ArrayList<Student> students = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=student1512&password=1212aQ&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-            Statement statement = conn.createStatement();
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);            Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM student where status = '1';");
             while (result.next()) {
                 Student student = new Student();
@@ -35,7 +35,7 @@ public class DatabaseServices {
 
     public static void studentModifying(int id, String surname, String name, String group, String date) {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("UPDATE `student` SET `surname` = '" + surname + "', `name` = '" + name + "', `group` = '" + group + "', `date` = '" + date + "' WHERE (`id` = '" + id + "')");
         } catch (SQLException e) {
@@ -45,7 +45,7 @@ public class DatabaseServices {
 
     public static void deleteDiscipline(String[]idsDelete) {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             for(int i=0; i<idsDelete.length; i++ ){
                 statement.execute("UPDATE `disciplina` SET `status` = '0' WHERE (`id` = '"+idsDelete[i]+"');");
@@ -57,7 +57,7 @@ public class DatabaseServices {
 
     public static void studentCreating(String surname, String name, String group, String date) {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("INSERT INTO `student` (`surname`, `name`, `group`, `date`, `status`) VALUES ('" + surname + "', '" + name + "', '" + group + "', '" + date + "', '1')");
         } catch (SQLException e) {
@@ -70,7 +70,7 @@ public class DatabaseServices {
         ArrayList<Disciplina> disciplinas = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM disciplina where status = '1';");
             while (result.next()) {
@@ -89,7 +89,7 @@ public class DatabaseServices {
     public static void disciplineCreating(String disciplina) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("INSERT INTO `disciplina` (`disciplina`, `status`) VALUES ('" + disciplina + "', '1')");
         } catch (Exception e) {
@@ -100,7 +100,7 @@ public class DatabaseServices {
     public static void disciplineModifying(String disciplina, String id) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("UPDATE `disciplina` SET `disciplina` = '" + disciplina + "' WHERE (`id` = '"+id+"')");
         } catch (Exception e) {
@@ -114,7 +114,7 @@ public class DatabaseServices {
         ArrayList<Term> terms = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM term where status = '1';");
             while (result.next()) {
@@ -134,7 +134,7 @@ public class DatabaseServices {
         ArrayList<Disciplina> disciplinas = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM term_disciplina \n" +
                     "left join disciplina on id_disciplina = disciplina.id\n" +
@@ -155,7 +155,7 @@ public class DatabaseServices {
     public static int termCreating(String name, String duration) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("INSERT INTO `term` (`name`, `duration`) VALUES ('" + name + "', '" + duration + "')");
             ResultSet result = statement.executeQuery("SELECT LAST_INSERT_ID();");
@@ -171,7 +171,7 @@ public class DatabaseServices {
     public static void addDisciplinesToSemestr(int idSemestra, String[] idsDiscipline) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             for (String iddiscipline : idsDiscipline) {
                 statement.execute("INSERT INTO `term_disciplina` (`id_term`, `id_disciplina`) VALUES ('" + idSemestra + "', '" + iddiscipline + "')");
@@ -185,7 +185,7 @@ public class DatabaseServices {
     public static void deleteDisciplinesFromSemestr(int idSemestra) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("DELETE FROM `term_disciplina` WHERE (`id_term` = '" + idSemestra + "')");
         } catch (Exception e) {
@@ -197,7 +197,7 @@ public class DatabaseServices {
     public static void modifyTermDuration(String duration, int idSemestra) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             statement.execute("UPDATE `students`.`term` SET `duration` = '" + duration + "' WHERE (`id` = '" + idSemestra + "')");
         } catch (Exception e) {
@@ -209,7 +209,7 @@ public class DatabaseServices {
         Student student = new Student();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM student where status = '1' and id = '"+id+"';");
             while (result.next()) {
@@ -230,7 +230,7 @@ public class DatabaseServices {
         Disciplina disciplina = new Disciplina();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM disciplina where id = '"+id+"';");
             while (result.next()) {
@@ -248,7 +248,7 @@ public class DatabaseServices {
         Term term = new Term();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM term where id = '"+id+"';");
             while (result.next()) {
@@ -267,7 +267,7 @@ public class DatabaseServices {
         ArrayList<Role> roles = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM role");
             while (result.next()) {
@@ -287,7 +287,7 @@ public class DatabaseServices {
         User user = new User();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM students.user where login = '"+login+"' and password = '"+password+"' and id_roli = '"+idRoli+"'");
             while (result.next()) {
@@ -305,7 +305,7 @@ public class DatabaseServices {
         ArrayList<Mark> marks = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/students?user=root&password=1212a&useLegacyDatetimeCode=false&amp&serverTimezone=Europe/Amsterdam&amp&useSSL=false");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM mark\n" +
                     "left join term_disciplina on id_term_disciplina = term_disciplina.id\n" +

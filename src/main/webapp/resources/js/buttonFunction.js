@@ -30,9 +30,4 @@ function deleteDisciplines() {
     $('#idRemoveDisciplineHidden').val(ids);
     $('#disciplina-remove-form').submit();
 
-
-
-
-
-
 }

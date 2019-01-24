@@ -1,9 +1,7 @@
 package controllers.newControllers;
 
-import com.sun.xml.internal.bind.v2.runtime.Name;
 import database.DatabaseServices;
 import entity.Disciplina;
-import entity.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
