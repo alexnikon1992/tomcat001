@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <title>Список всех студентов</title>
     <link rel="stylesheet" href="../resources/css/style.css">
+    <script src="../resources/js/buttonFunction.js"></script>
+    <script src="../resources/js/jquery.min.js"></script>
 </head>
 <body>
 <div class="display-flex centre">
@@ -26,7 +28,7 @@
         </div>
         <div class="display-flex mobile-div">
             <div><input type="submit" class="black-button big-button" value="Модифицировать выбранного студента"></div>
-            <div><input type="submit" class="black-button small-button" value="Удалить выбранных студентов"></div>
+            <div><input type="submit" class="black-button small-button" value="Удалить выбранных студентов" onclick="deleteStudents()"></div>
         </div>
     </div>
 </div>
@@ -49,7 +51,7 @@
             </tr>
             <c:forEach items="${studentlist}" var="st">
                 <tr>
-                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" id="${st.id}"></td>
                     <td>${st.surname}</td>
                     <td>${st.name}</td>
                     <td>${st.group}</td>
@@ -59,5 +61,8 @@
         </table>
     </div>
 </div>
+<form id="deleteStudentForm" method="post" action="/student-delete">
+    <input type="hidden" id = "idsDeleteStudentHidden" name="idsDeleteStudentHidden">
+</form>
 </body>
 </html>

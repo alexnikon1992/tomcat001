@@ -55,6 +55,18 @@ public class DatabaseServices {
         }
     }
 
+    public static void deleteStudent(String[]idsDelete) {
+        try {
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            for(int i=0; i<idsDelete.length; i++ ){
+                statement.execute("UPDATE `student` SET `status` = '0' WHERE (`id` = '"+idsDelete[i]+"');");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void studentCreating(String surname, String name, String group, String date) {
         try {
             Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);

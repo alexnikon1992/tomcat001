@@ -31,3 +31,19 @@ function deleteDisciplines() {
     $('#disciplina-remove-form').submit();
 
 }
+function deleteStudents() {
+    var items = $("input[type=checkbox]:checked");
+
+    if(items.length==0){
+        alert('Пожалуйста выбкрите хотя бы одного студента')
+        return;
+    }
+
+    var ids = "";
+    for (var i = 0; i<items.length; i++){
+        ids = ids+$(items[i]).attr("id")+","
+    }
+    $('#idsDeleteStudentHidden').val(ids);
+    $('#deleteStudentForm').submit();
+
+}
