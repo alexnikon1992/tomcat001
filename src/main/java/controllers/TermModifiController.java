@@ -52,6 +52,6 @@ public class TermModifiController extends HttpServlet {
 
         req.setAttribute("disciplinasFromSelTerm", disciplinasFromSelTerm);
         req.setAttribute("currentTerm", term);
-        req.getRequestDispatcher("/WEB-INF/jsp/term-modifi.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/student-modify.jsp").forward(req, resp);
     }
 }

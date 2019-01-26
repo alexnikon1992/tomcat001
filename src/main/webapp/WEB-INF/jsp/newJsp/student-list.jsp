@@ -23,11 +23,11 @@
     <div class="student-list-div">
         <div class="display-flex mobile-div">
             <div><input class="black-button big-button" type="submit"
-                        value="Просмотреть успеваемость выбранных студентов"></div>
+                        value="Просмотреть успеваемость выбранных студентов" onclick="viewStudentPrograss()"></div>
             <div><form method="get" action="/student-create"><input type="submit" class="black-button small-button" value="Создать студента"></form></div>
         </div>
         <div class="display-flex mobile-div">
-            <div><input type="submit" class="black-button big-button" value="Модифицировать выбранного студента"></div>
+            <div><input type="submit" class="black-button big-button" value="Модифицировать выбранного студента" onclick="studentModify()"></div>
             <div><input type="submit" class="black-button small-button" value="Удалить выбранных студентов" onclick="deleteStudents()"></div>
         </div>
     </div>
@@ -64,5 +64,12 @@
 <form id="deleteStudentForm" method="post" action="/student-delete">
     <input type="hidden" id = "idsDeleteStudentHidden" name="idsDeleteStudentHidden">
 </form>
+<form id="viewStudetnProgress" method="get" action="/student-progress">
+    <input type="hidden" id = "idsViewPrograssHidden" name="idsViewPrograssHidden" value="ddfd">
+</form>
+<form id="modifyStudent" method="get" action="/studet-modify">
+    <input type="hidden" id="idsModifyStudentHidden" name="idsModifyStudentHidden">
+</form>
+
 </body>
 </html>

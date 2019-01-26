@@ -47,3 +47,33 @@ function deleteStudents() {
     $('#deleteStudentForm').submit();
 
 }
+
+function viewStudentPrograss() {
+    var items = $("input[type=checkbox]:checked");
+      if(items.length==0){
+          alert('Пожалуйта выберите хотя бы одного  студента')
+          return;
+      }
+      if(items.length>1){
+          alert('Пожалуйта выберите только одного  студента')
+          return;
+      }
+      var id = $(items).attr("id");
+      $('#idsViewPrograssHidden').val(id);
+      $('#viewStudetnProgress').submit();
+}
+
+function studentModify() {
+    var items = $("input[type=checkbox]:checked");
+    if(items.length==0){
+        alert('Пожалуйта выберите хотя бы одного  студента')
+        return;
+    }
+    if(items.length>1){
+        alert('Пожалуйта выберите только одного  студента')
+        return;
+    }
+    var id = $(items).attr("id");
+    $('#idsModifyStudentHidden').val(id);
+    $('#modifyStudent').submit();
+}
