@@ -25,7 +25,8 @@ public class TermCreateController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String duration = req.getParameter("duration");
         String[] idsDisciplines = req.getParameterValues("selectdiscipline");
-        int idSemestr = DatabaseServices.termCreating("Сесестр 5", duration);
+        int idSemestr = DatabaseServices.termCreating("xdfdx", duration);
+        DatabaseServices.modifyTerm(duration, idSemestr);
         DatabaseServices.addDisciplinesToSemestr(idSemestr, idsDisciplines);
         resp.sendRedirect("/term-list");
     }

@@ -26,13 +26,16 @@
 </div>
 <div class="display-flex start">
     <div class="column-20"></div>
+    <form action="/studet-modify" method="post" >
     <div CLASS="div-for-student-modifing">
-        <div class="display-flex"><label>Фамилия</label><input type="text" value="${studentselect.surname}"></div>
-        <div class="display-flex"><label>Имя</label><input type="text" value="${studentselect.name}"></div>
-        <div class="display-flex"><label>Группа</label><input type="text" value="${studentselect.group}"></div>
-        <div CLASS="display-flex"><label>Дата поступления</label><input type="text" value="${studentselect.date}"></div>
+        <input type="hidden" name="id" value="${studentselect.id}">
+        <div class="display-flex"><label>Фамилия</label><input type="text" name="surname" value="${studentselect.surname}"></div>
+        <div class="display-flex"><label>Имя</label><input type="text" name="name" value="${studentselect.name}"></div>
+        <div class="display-flex"><label>Группа</label><input type="text" name="group" value="${studentselect.group}"></div>
+        <div CLASS="display-flex"><label>Дата поступления</label><input name="date" type="text" value="${studentselect.date}"></div>
         <div class="display-flex"><input type="submit" value="Применить"></div>
     </div>
+    </form>
 </div>
 </body>
 </html>

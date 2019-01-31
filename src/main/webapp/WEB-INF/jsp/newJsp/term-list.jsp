@@ -21,17 +21,26 @@
 
     <div class="div-student-progress-select-semestr">
         <div class="display-flex start">
-            <form>
+            <form action="/term-list" method="post">
             <label>Выбрать семестр</label>
             <div class="select">
-                <select>
+                <select name="selectedTerm">
                     <c:forEach items="${termlist}" var="currentterm">
-                        <option>${currentterm.name}</option>
+                        <c:choose>
+                            <c:when test="${currentterm.id == selectedterm.id}">
+                                <option selected value="${currentterm.id}">${currentterm.name}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${currentterm.id}">${currentterm.name}</option>
+                            </c:otherwise>
+                        </c:choose>
+
                     </c:forEach>
                 </select>
             </div>
 
-            <input type="submit" value="Выбрать"></form>
+            <input type="submit" value="Выбрать">
+            </form>
         </div>
         <label>Длительность семестра: ${selectedterm.duration}</label>
     </div>

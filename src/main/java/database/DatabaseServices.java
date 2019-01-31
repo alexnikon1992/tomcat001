@@ -206,12 +206,12 @@ public class DatabaseServices {
 
     }
 
-    public static void modifyTermDuration(String duration, int idSemestra) {
+    public static void modifyTerm(String duration, int idSemestra) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
-            statement.execute("UPDATE `students`.`term` SET `duration` = '" + duration + "' WHERE (`id` = '" + idSemestra + "')");
+            statement.execute("UPDATE`term` SET `duration` = '" + duration + "', `name` = 'Семестр "+idSemestra+"' WHERE (`id` = '" + idSemestra + "')");
         } catch (Exception e) {
             e.printStackTrace();
         }

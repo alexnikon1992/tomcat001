@@ -27,11 +27,39 @@ public class ViewStudentProgressController extends HttpServlet {
         for (int i = 0; i < marks.size(); i++){
             summaMarks = summaMarks + marks.get(i).getMark();
         }
-        double srednee = summaMarks/marks.size();
+        double srednee = 0;
+        if (marks.size()!=0){
+           srednee = summaMarks/marks.size();
+        }
         req.setAttribute("srednee", srednee);
         req.setAttribute("termsAll", terms);
         req.setAttribute("progressStudent", student);
         req.setAttribute("marks", marks);
         req.getRequestDispatcher("/WEB-INF/jsp/newJsp/studentprog.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idSelectedTerm = req.getParameter("selectTerm");
+        String idStudent = req.getParameter("idStudent");
+        Student student = DatabaseServices.getStudentById(Integer.parseInt(idStudent));
+        List<Term> terms = DatabaseServices.getAllTerms();
+        Term selectTerm = DatabaseServices.getTermById(Integer.parseInt(idSelectedTerm));
+        List<Mark> marks = DatabaseServices.getAllMarks(Integer.parseInt(idStudent),Integer.parseInt(idSelectedTerm));
+        int summaMarks = 0;
+        for (int i= 0; i<marks.size(); i++){
+            summaMarks = summaMarks +marks.get(i).getMark();
+        }
+        double srednee = 0;
+        if (marks.size()!=0){
+            srednee = summaMarks/marks.size();
+        }
+        req.setAttribute("srednee", srednee);
+        req.setAttribute("termsAll", terms);
+        req.setAttribute("progressStudent", student);
+        req.setAttribute("marks", marks);
+        req.setAttribute("selecteTerm", selectTerm);
+        req.getRequestDispatcher("/WEB-INF/jsp/newJsp/studentprog.jsp").forward(req, resp);
+
     }
 }

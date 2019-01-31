@@ -24,5 +24,15 @@ public class TerlListController extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/jsp/newJsp/term-list.jsp").forward(req, resp);
     }
 
-
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String selectedTerm = req.getParameter("selectedTerm");
+        List<Term> terms = DatabaseServices.getAllTerms();
+        List<Disciplina>disciplinas = DatabaseServices.getDisciplineSemestr(Integer.parseInt(selectedTerm));
+        req.setAttribute("termlist", terms);
+        Term termSelected = DatabaseServices.getTermById(Integer.parseInt(selectedTerm));
+        req.setAttribute("selectedterm", termSelected);
+        req.setAttribute("disciplines", disciplinas);
+        req.getRequestDispatcher("/WEB-INF/jsp/newJsp/term-list.jsp").forward(req, resp);
+    }
 }
