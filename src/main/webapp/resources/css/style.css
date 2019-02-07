@@ -380,6 +380,16 @@ select {
 .login .div-student-progress-select-semestr{
     margin: 20px 0 0 20px;
 }
+.login .div-student-select-role {
+    margin: 20px 0 0 20px;
+}
+
+.select-style{
+    padding: 4px;
+    width: 200px;
+    font-size: 15px;
+}
+
 #select-rol{
     font-weight: 500;
 }

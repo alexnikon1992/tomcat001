@@ -12,42 +12,53 @@
 <div class="display-flex centre">
     <div></div>
     <div><h1>Система управления студентами и их успеваемостью</h1></div>
-    <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+    <c:choose>
+        <c:when test="${isLogin=='true'}">
+            <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+        </c:when>
+        <c:otherwise>
+            <div class="logout-div"><a href="/login" class="logout-link">Login</a></div>
+        </c:otherwise>
+    </c:choose>
 </div>
 <div class="display-flex start padding-top-10">
     <div class="column-20">
         <a class="a-na-glavnuu" href="/">На главную</a>
-        <a class="a-na-glavnuu" href="/">Назад</a>
+        <a class="a-na-glavnuu" href="/term-list">Назад</a>
     </div>
     <div class="main-title-page">
         Для создания семестра заполните следующие данные и нажмите кнопку "Создать".
     </div>
 </div>
 <form action="/term-create" method="post">
-<div id="discipline-creating" class="display-flex start">
-    <div class="column-20"></div>
-    <div CLASS="div-for-student-modifing div-for-student-page-new div-class-for-button-error">
-        <div class="display-flex"><label>Длительность (в неделях)</label><input name="duration" type="text" value="24"></div>
-        <div class="display-flex"><label>Выберите дисциплину</label><select name="selectdiscipline" multiple size="8">
-            <c:forEach items="${disciplina}" var="currentdiscipline">
-                <option value="${currentdiscipline.id}">${currentdiscipline.disciplina}</option>
-            </c:forEach>
-        </select>
-        </div>
+    <div id="discipline-creating" class="display-flex start">
+        <div class="column-20"></div>
+        <div CLASS="div-for-student-modifing div-for-student-page-new div-class-for-button-error">
+            <div class="display-flex"><label>Длительность (в неделях)</label><input name="duration" type="text"
+                                                                                    value="24"></div>
+            <div class="display-flex"><label>Выберите дисциплину</label><select name="selectdiscipline" multiple
+                                                                                size="8">
+                <c:forEach items="${disciplina}" var="currentdiscipline">
+                    <option value="${currentdiscipline.id}">${currentdiscipline.disciplina}</option>
+                </c:forEach>
+            </select>
+            </div>
 
-        <div class="display-flex" id="button-create-term">
-            <input type="submit" value="Создать">
+            <div class="display-flex" id="button-create-term">
+                <input type="submit" value="Создать">
+            </div>
         </div>
     </div>
-</div>
 </form>
 
 <div class="display-flex start padding-top-10">
     <div class="column-20">
     </div>
-    <div class="error-lable">
-        Поля не должны быть пустыми!
-    </div>
+    <c:if test="${message == 1}">
+        <div class="error-lable">
+            Поля не должны быть пустыми!
+        </div>
+    </c:if>
 </div>
 </body>
 </html>

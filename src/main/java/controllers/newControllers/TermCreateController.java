@@ -25,6 +25,20 @@ public class TermCreateController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String duration = req.getParameter("duration");
         String[] idsDisciplines = req.getParameterValues("selectdiscipline");
+
+        if (duration == null || idsDisciplines == null) {
+            List<Disciplina> disciplinas = DatabaseServices.getAllDisciplines();
+            req.setAttribute("disciplina", disciplinas);
+            req.setAttribute("message", 1);
+            req.getRequestDispatcher("/WEB-INF/jsp/newJsp/term-creating.jsp").forward(req, resp);
+        }
+        if (duration.equals("") || idsDisciplines.length == 0) {
+            List<Disciplina> disciplinas = DatabaseServices.getAllDisciplines();
+            req.setAttribute("disciplina", disciplinas);
+            req.setAttribute("message", 1);
+            req.getRequestDispatcher("/WEB-INF/jsp/newJsp/term-creating.jsp").forward(req, resp);
+        }
+
         int idSemestr = DatabaseServices.termCreating("xdfdx", duration);
         DatabaseServices.modifyTerm(duration, idSemestr);
         DatabaseServices.addDisciplinesToSemestr(idSemestr, idsDisciplines);

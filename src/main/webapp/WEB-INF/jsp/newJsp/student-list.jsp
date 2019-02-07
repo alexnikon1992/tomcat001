@@ -14,7 +14,14 @@
 <div class="display-flex centre">
     <div></div>
     <div><h1>Система управления студентами и их успеваемостью</h1></div>
-    <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+    <c:choose>
+        <c:when test="${isLogin=='true'}">
+            <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+        </c:when>
+        <c:otherwise>
+            <div class="logout-div"><a href="/login" class="logout-link">Login</a></div>
+        </c:otherwise>
+    </c:choose>
 </div>
 <div class="display-flex start padding-top-10">
     <div class="column-20">
@@ -24,12 +31,20 @@
         <div class="display-flex mobile-div">
             <div><input class="black-button big-button" type="submit"
                         value="Просмотреть успеваемость выбранных студентов" onclick="viewStudentPrograss()"></div>
-            <div><form method="get" action="/student-create"><input type="submit" class="black-button small-button" value="Создать студента"></form></div>
+            <div>
+<c:if test="${role=='1'}">
+                <form method="get" action="/student-create">
+                    <input type="submit" class="black-button small-button" value="Создать студента">
+                </form>
+</c:if>
+            </div>
         </div>
+<c:if test="${role=='1'}">
         <div class="display-flex mobile-div">
             <div><input type="submit" class="black-button big-button" value="Модифицировать выбранного студента" onclick="studentModify()"></div>
             <div><input type="submit" class="black-button small-button" value="Удалить выбранных студентов" onclick="deleteStudents()"></div>
         </div>
+</c:if>
     </div>
 </div>
 <div class="display-flex start">

@@ -206,6 +206,19 @@ public class DatabaseServices {
 
     }
 
+
+    public static void deleteSemestr(int idSemestra) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(Constant.PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("UPDATE `students`.`term` SET `status` = '0' WHERE (`id` = '"+idSemestra+"');");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void modifyTerm(String duration, int idSemestra) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

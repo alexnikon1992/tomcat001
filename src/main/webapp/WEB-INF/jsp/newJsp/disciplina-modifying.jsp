@@ -17,7 +17,7 @@
 <div class="display-flex start padding-top-10">
     <div class="column-20">
         <a class="a-na-glavnuu" href="/">На главную</a>
-        <a class="a-na-glavnuu" href="/">Назад</a>
+        <a class="a-na-glavnuu" href="/disciplina-list-cont">Назад</a>
     </div>
     <div class="main-title-page">
         Для того чтобы модифицировать дисциплину введите новое значение и нажмите кнопку "Применить".

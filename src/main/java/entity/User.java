@@ -1,7 +1,7 @@
 package entity;
 
 public class User {
-    private int id;
+    private int id = -1;
     private String login;
     private String password;
     private Role role;

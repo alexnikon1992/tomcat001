@@ -5,7 +5,6 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="../../../resources/colorpicker/css/colorpicker.css" type="text/css" />
-    <link rel="stylesheet" media="screen" type="text/css" href="../../../resources/colorpicker/css/layout.css" />
     <script type="text/javascript" src="../../../resources/colorpicker/js/jquery.js"></script>
     <script type="text/javascript" src="../../../resources/colorpicker/js/colorpicker.js"></script>
     <script type="text/javascript" src="../../../resources/colorpicker/js/eye.js"></script>
@@ -28,12 +27,19 @@
 <div class="display-flex centre">
     <div></div>
     <div><h1>Система управления студентами и их успеваемостью</h1></div>
-    <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+    <c:choose>
+        <c:when test="${isLogin=='true'}">
+            <div class="logout-div"><a href="/logout" class="logout-link">Logout</a></div>
+        </c:when>
+        <c:otherwise>
+            <div class="logout-div"><a href="/login" class="logout-link">Login</a></div>
+        </c:otherwise>
+    </c:choose>
 </div>
 <div class="display-flex start padding-top-10">
     <div class="column-20">
         <a class="a-na-glavnuu" href="/">На главную</a>
-        <a class="a-na-glavnuu" href="/">Назад</a>
+        <a class="a-na-glavnuu" href="/studets">Назад</a>
     </div>
     <div class="main-title-page">
         Для создания студента заполните все поля и нажмите кнопку "Создать".
